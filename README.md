@@ -16,8 +16,9 @@ npm run build
 
 # build for production and view the bundle analyzer report
 npm run build --report
-
-# Todo: 
+```
+## Todo: 
+``` bash
 [X] 首页
 [X] 购物车
 [X] 订单页
