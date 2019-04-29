@@ -8,14 +8,11 @@
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
+# serve with hot reload with at dist 
 npm run dev
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
+# end
+open wx-developer-tool and link to dist
 ```
 ## Todo: 
 ``` bash
