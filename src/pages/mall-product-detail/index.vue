@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
+        <TopNav :keyword='content' :isShowInput="false"/>
         <div class="box">
-            <TopNav :keyword='content' :isShowInput="false"/>
             <!-- 内容  -->
             <div class="product-box">
                 <Banner :bannerHeight="bannerHeight" :imgUrl="ImgUrl"></Banner>
@@ -71,14 +71,11 @@
         },
         // created钩子在query拿到之前，所以报undefined，所以在mounted里边拿到
         mounted() {
+            this.showLoading();
+            this.productDetail = {};
             this.content = this.$root.$mp.query.content || 'null';
             this.id = this.$root.$mp.query.id || 73;
             this.getProductDetail(this.id);
-            this.productDetail = {};
-            this.showLoading();
-        },
-        onShow() {
-            console.log('onShow');
         },
         components: { Banner, TopNav },
         methods: {
@@ -304,7 +301,7 @@
             width: 100%;
             background: #eeeeee;
             border-top: 1px solid #d6c0c0;
-            z-index: 50;
+            z-index: 17;
             .collect {
                 display: flex;
                 flex-flow: row nowrap;
@@ -351,9 +348,8 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: #412d2d;
-        opacity: .3;
-        z-index: 50;
+        background: #ffffff;
+        z-index: 18;
     }
     .hidden{
         overflow: hidden;

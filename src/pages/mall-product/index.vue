@@ -3,7 +3,7 @@
         <div class="box">
             <TopNav :keyword='product.keyword'/>
             <!-- 内容  -->
-            <div class="product-box">
+            <div class="product-box" v-show="isShowPage">
                 <div class="header-line"></div>
                 <Product :atBottom="isBottom"
                     :productTitle="productTitle"
@@ -30,6 +30,7 @@
             return {
                 product: {},
                 isShowBack: false,
+                isShowPage: false,
                 isShowMask: false,
                 isBottom: false
             }
@@ -37,21 +38,28 @@
         components: { Product, TopNav },
         // created钩子在query拿到之前，所以报undefined，所以在mounted里边拿到
         mounted() {
-            this.product = {
-                keyword: this.$root.$mp.query.content || '手机',
-                orderBy: 'default',
-                pageNum: 1,
-                pageSize: 20
-            };
-            // 展示loadinga
-            $Toast({
-                content: '加载中',
-                type: 'loading',
-                duration: 0
-            });
-            this.isShowMask = true;
+            this.init();
+        },
+        onShow() {
+            this.init();
         },
         methods: {
+            init() {
+                this.product = {
+                    keyword: this.$root.$mp.query.content || '手机',
+                    orderBy: 'default',
+                    pageNum: 1,
+                    pageSize: 20
+                };
+                // 展示loadinga
+                $Toast({
+                    content: '加载中',
+                    type: 'loading',
+                    duration: 0
+                });
+                this.isShowMask = true;
+                this.isShowPage = false;
+            },
             jumpToTop() {
                 if (wx.pageScrollTo) {
                     wx.pageScrollTo({
@@ -68,6 +76,9 @@
             loadSucc(flag) {
                 $Toast.hide();
                 this.isShowMask = false;
+                setTimeout(()=>{
+                    this.isShowPage = true;
+                }, 300);
                 if (!flag) {
                     $Toast({
                         content: '您所搜索的商品可能不存在哦~'
@@ -139,8 +150,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: #412d2d;
-        opacity: .3;
-        z-index: 50;
+        background: #ffffff;
+        z-index: 18;
     }
 </style>

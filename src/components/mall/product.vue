@@ -96,6 +96,7 @@
 </script>
 <style lang="less" scoped>
     .wrapper {
+        width:100%;
         background: white;
         margin: .2rem auto;
         text-align: center;
@@ -108,7 +109,7 @@
 
     .box {
         padding-top: .1rem;
-
+        width:100%;
         /* waterflow */
         .product-flow {
             display: flex;

@@ -204,6 +204,9 @@ export default {
             return result;
         }
     },
+    onShow() {
+        this.init();
+    },
     mounted() {
         this.init();
     }
