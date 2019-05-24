@@ -92,7 +92,9 @@ export default {
                     const index = this.checkedIds.indexOf(id);
 
                     if (index > -1) {
+                        console.log(this.checkedIds);
                         this.checkedIds.splice(index, 1);
+                        console.log(this.checkedIds);
                     }
                 });
             } else {
@@ -192,6 +194,7 @@ export default {
                     this.cartList = res.data.cartProductVoList;
                     this.isAllCheck = res.data.allChecked;
                     this.cartTotalPrice = res.data.cartTotalPrice;
+                    this.checkedIds = [];
                     this.cartList.forEach(element=> {
                         if(element.productChecked === 1) {
                             this.checkedIds.push(element.productId);
