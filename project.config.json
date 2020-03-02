@@ -10,7 +10,7 @@
 	},
 	"miniprogramRoot": "dist/wx/",
 	"compileType": "miniprogram",
-	"appid": "wx77efe284d65afa68",
+	"appid": "wxcc81b7ec7111553e",
 	"projectname": "mall-mini",
 	"condition": {
 		"search": {
