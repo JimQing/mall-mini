@@ -1,5 +1,5 @@
 import {request} from '../utils/deliver.js'
-const baseUrl = 'https://jimqing.xin';
+const baseUrl = 'http://happymmall.com';
 
 const order = {
     // 获取全部订单列表

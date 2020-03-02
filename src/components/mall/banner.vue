@@ -27,10 +27,9 @@
             imgUrl: {
                 type: Array,
                 default: [
-                    'http://jimqing.xin/image/banner1.png',
-                    'http://jimqing.xin/image/banner3.png',
-                    'http://jimqing.xin/image/banner4.png',
-                    'http://jimqing.xin/image/banner5.png'
+                    require('../../../static/image/banner1.jpg'),
+                    require('../../../static/image/banner3.jpg'),
+                    require('../../../static/image/banner4.jpg')
                 ]
             }
         },
